@@ -27,4 +27,3 @@
   - [트라이(Trie)](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Data%20Structure/Trie.md)
   - [B-Tree & B+Tree](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Data%20Structure/B%20Tree%20%26%20B%2B%20Tree.md)
 
-  <br>
