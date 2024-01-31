@@ -1,8 +1,6 @@
-작성예시 (수정 예정)
-
 ## 📌 Computer Science
 
-- ### Computer Architecture
+- ### [Design Pattern] ()
 
   - [컴퓨터 구조 기초](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Computer%20Architecture/%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B5%AC%EC%A1%B0%20%EA%B8%B0%EC%B4%88.pdf)
   - [컴퓨터의 구성](https://github.com/gyoogle/tech-interview-for-developer/blob/master/Computer%20Science/Computer%20Architecture/%EC%BB%B4%ED%93%A8%ED%84%B0%EC%9D%98%20%EA%B5%AC%EC%84%B1.md)
