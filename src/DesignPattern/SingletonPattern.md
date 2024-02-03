@@ -106,7 +106,8 @@ TDD(Test Driven Development)를 할 때 걸림돌이됨. TDD에서는 단위테�
 결합도(Coupling) 또는 의존도 : 외부의 모듈과의 연관도
 (의존성 : (`A → B`) A 가 B에 의존한다 → B의 상태가 변하면 A도 변경되어야 하는 관계)
 응집도(Cohesion) : 모듈 내부 구성요소 간 연관 정도
-<img src="C:\CS_NOTE\src\images\결합도, 응집도.jpg" width="500" height="300"/>
+<img src="https://github.com/jiyeon1227/CS_NOTE/blob/master/src/images/%EA%B2%B0%ED%95%A9%EB%8F%84,%20%EC%9D%91%EC%A7%91%EB%8F%84.jpg?raw=true" width="500" height="300"/>
+
 
 > 객체지향 설계원칙 (solid)
 > - 단일 책임 원칙(SRP, Single responsiboility principle) : 한 클래스는 하나의 책임만을 가져야한다.
@@ -133,7 +134,7 @@ TDD(Test Driven Development)를 할 때 걸림돌이됨. TDD에서는 단위테�
 
 ✏️의존성 주입의 원칙
 
-의존성 주입은 상위 모듈은 하위 모듈에서 어떤 것도 가져오면 안된다. 또한 둘 다 추상화에 의존해야 하며 추상화는 세부사항에 의존하지 말아야 한다.
+의존성 주입은 상위 모듈은 하위 모듈에서 어떤 것도 가져오면 안된다. 또한 둘 다 추상화에 의존해야 하며 추상화는 세부사항에 의존하지 말아야 한다.
 
 ⭐ 자바 싱글톤 VS 스프링 싱글톤
 
