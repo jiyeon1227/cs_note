@@ -2,7 +2,7 @@
 
 ❗하나의 클래스에 오직 하나의 인스턴스만 가지는 패턴. 데이터베이스 연결 모듈에 많이 사용
 
-기본적인 싱글톤 생성
+기본적인 싱글톤 생성 코드
 
 ```java
 class Singleton {
@@ -40,12 +40,11 @@ public class HelloWorld{
 
 ❓Synchronized를 사용하면 왜 성능저하가 왜 심해질까?
 
-❗Synchronized 키워드를 사용하면 자바 내부적으로 메서드나 변수에 동기화를 하기 위해 block과 unblock을 처리하게 되는데 이런 처리들이 만약 너무 많아지게 되면 오히려 프로그램 성능저하를 일으킬 수 있음
+❗Synchronized 키워드를 사용하면 자바 내부적으로 메서드나 변수에 동기화를 하기 위해 block과 unblock을 처리하게 되는데 만약 이런 처리들이 너무 많아지게 되면 오히려 프로그램 성능저하를 일으킬 수 있음
 
 > Synchronized : 현재 데이터를 사용하고 있는 해당 스레드를 제외하고 나머지 스레드들은 데이터에 접근 할 수 없도록 막는 개념
->
 
-LazyHolder를 이용한 싱글톤 생성
+LazyHolder를 이용한 싱글톤 생성 코드
 
 ```java
 class Singleton { // 싱글톤 인스턴스를 생성하고 관리하는 클래스
@@ -79,20 +78,38 @@ true
 */
 ```
 
-[Synchronized  블로그 참고]
-
-https://steady-coding.tistory.com/556
-
 ✏️**싱글톤 패턴의 단점**
 
 TDD(Test Driven Development)를 할 때 걸림돌이됨. TDD에서는 단위테스트를 주로 하는데, 단위테스트는 테스트가 서로 독립적이어야 하며 테스트를 어떤 순서로든 실행할 수 있어야함.
 
 싱글톤 패턴은 미리 생성된 하나의 인스턴스를 기반으로 구현하기 때문에 각 테스트마다 독립적인 인스턴스를 만들기 어려움
 
-> 단위테스트(Unit Test) : 일반적으로 실무에서 테스트 코드를 작성할때는 거의 단위테스트를 의미함.  하나의 모듈을 기준으로 독립적으로 진행되는 가장 작은 단위테스트.
-
-> 테스트 레벨 <img src="C:\CS_NOTE\src\images\테스트 레벨.jpg" width="500" height="300"/>
-
+> 단위테스트(Unit Test) : 일반적으로 실무에서 테스트 코드를 작성할때는 거의 단위테스트를 의미함. 하나의 모듈을 기준으로 독립적으로 진행되는 가장 작은 단위테스트
+>
+> <details>
+> <summary>테스트 종류</summary>
+> <div markdown="1">
+> <img src="https://github.com/jiyeon1227/CS_NOTE/blob/master/src/images/%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EB%A0%88%EB%B2%A8.jpg?raw=true" width="500" height="300"/>
+>
+> 1) 단위테스트
+> - 소프트웨어 개발에서 테스트 프로세스의 첫 단계
+> - 작성된 코드를 분석함
+> - 정적테스트, 동적테스트
+>
+> 2) 통합테스트
+> - 각 모듈을 통합하여, 통합된 컴포넌트 간의 인터페이스와 상호작용 과정의 오류를 발견하는 작업을 수행함
+> - 프로그램을 실행하며 테스트
+> - 상향테스트, 하향테스트, 빅뱅테스트, 백본테스트
+> 
+> 3) 시스템 테스트
+> - 실제 구현됭 시스템과 계획된 사양 (Specifications)을 서로 비교하는 작업 (기능 테스트)
+> - 단위, 통합테스으 후 전체 시스템이 정상적으로 작동하는지 확인 (비기능 테스트)
+> 
+> 4) 인수 테스트
+> - 시스템을 배포하거나 실제 사용할만한 준비가 되어있는지에 대해 평가
+> - 알파테스트(개발자 + 사용자), 베타테스트(사용자) 등
+> </div>
+> </details>
 
 ✏️**의존성 주입**
 
@@ -102,12 +119,23 @@ TDD(Test Driven Development)를 할 때 걸림돌이됨. TDD에서는 단위테�
 
 ❗메인 모듈이 직접 다른 하위 모듈에 의존성을 주지않고, 의존성 주입자 (dependency injector)를 중간에 둬서 간접적으로 의존성을 주입하는 방식이며 ‘디커플링’ 이라고도 한다.
 
-> 결합도는 낮게, 응집도는 높게 구성 되어야 좋은 설계(유지보수성이 높아짐)
-결합도(Coupling) 또는 의존도 : 외부의 모듈과의 연관도
-(의존성 : (`A → B`) A 가 B에 의존한다 → B의 상태가 변하면 A도 변경되어야 하는 관계)
-응집도(Cohesion) : 모듈 내부 구성요소 간 연관 정도
-<img src="https://github.com/jiyeon1227/CS_NOTE/blob/master/src/images/%EA%B2%B0%ED%95%A9%EB%8F%84,%20%EC%9D%91%EC%A7%91%EB%8F%84.jpg?raw=true" width="500" height="300"/>
-
+> 결합도는 낮게, 응집도는 높게 구성 되어야 모듈의 독립성을 높임(독립성을 높이면 유지보수성이 높아짐)
+> 
+> <details>
+> <summary>결합도, 응집도</summary>
+> <div markdown="1">
+> <img src="https://github.com/jiyeon1227/CS_NOTE/blob/master/src/images/%EA%B2%B0%ED%95%A9%EB%8F%84,%20%EC%9D%91%EC%A7%91%EB%8F%84.jpg?raw=true" width="500" height="300"/>
+>
+> - 결합도(Coupling) 또는 의존도
+> : 외부의 모듈과의 연관도
+> (의존성 : (`A → B`) A 가 B에 의존한다 → B의 상태가 변하면 A도 변경되어야 하는 관계)<br>
+> 자료결합도가 가장 결합도가 낮고, 내용결합도가 가장결합도가 높음 (그림 참고)
+> 
+> 
+> - 응집도(Cohesion) : 모듈 내부 구성요소 간 연관 정도<br>
+> 우연적 응집도가 가장 응집도가 낮고, 기능적 응집도가 가장 응집도가 높음 (그림 참고)
+> </div>
+> </details>
 
 > 객체지향 설계원칙 (solid)
 > - 단일 책임 원칙(SRP, Single responsiboility principle) : 한 클래스는 하나의 책임만을 가져야한다.
@@ -138,14 +166,12 @@ TDD(Test Driven Development)를 할 때 걸림돌이됨. TDD에서는 단위테�
 
 ⭐ 자바 싱글톤 VS 스프링 싱글톤
 
-자바
-
+JAVA
 - Class loader에 의해 구현
 - Thread Safety는 개발자 로직에 따라 다름
-- 공유범위 :  Class loader 기준
+- 공유범위 : Class loader 기준
 
-스프링
-
+Spring
 - 스프링 컨테이너에 의해 구현
 - Thread Safety를 자동으로 보장
-- 공유범위 :  ApplicationContext 기준
+- 공유범위 : ApplicationContext 기준
