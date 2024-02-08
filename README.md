@@ -11,5 +11,6 @@
 - ### [Network](src/Network/Network.md)
   
   - [기초](src/Network/기초)
+  - [기초](src/Network/기초)
 
 
