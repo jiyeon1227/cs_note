@@ -11,6 +11,9 @@
 - ### [Network](src/Network/Network.md)
   
   - [기초](src/Network/기초)
-  - [기초](src/Network/기초)
+  - [네트워크 기기](src/Network/네트워크 기기)
+  - [IP주소](src/Network/IP 주소)
+  - [HTTP](src/Network/기초)
+
 
 
