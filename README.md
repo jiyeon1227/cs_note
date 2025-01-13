@@ -8,7 +8,7 @@
 
   <br>
 
-- ### [Network](src/Network/Network.md)
+- ### [CS.DesignPattern.Network](src/Network/Network.md)
   
   - [기초](src/Network/기초)
   - [네트워크 기기](src/Network/네트워크 기기)
